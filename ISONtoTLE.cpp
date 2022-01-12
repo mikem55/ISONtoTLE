@@ -135,7 +135,7 @@ class ISON
             date.tm_mon = (reference_date / 10000) % 100 -1;
             date.tm_mday = (reference_date / 1000000);
             mktime(&date);
-            int dayNumber = date.tm_yday;
+            int dayNumber = date.tm_yday + 1;//tm_yday is days since Jan. 1 (jan. 1 = 0), we need day of year (jan 1 = 1)
             int secs = (reference_tod % 100);
             int mins = (reference_tod / 100) % 100;
             int hrs  = ((reference_tod) / 10000) % 100;
