@@ -1,3 +1,6 @@
+// mike marston
+// as of 30 nov 2021
+
 #include "utility.h"
 
 #include <ctype.h>
@@ -37,6 +40,8 @@ struct TLE_Lines_struct_def {
 typedef struct TLE_Lines_struct_def TLE_Lines_Type;
 
 float orbital_properties(float semimajor_axis, float e)
+// find some values like apogee, etc
+
 {
     float earth_radius = 6378.135;
     float mu = 398600.4418;
@@ -99,6 +104,7 @@ class ISON
         }
 
         void print(FILE* out = stdout)
+        // to screen
         {
             fprintf(out, "sequence: %d\n", sequence);
             fprintf(out, "so_num: %d\n", so_num);
